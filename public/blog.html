@@ -1,0 +1,15 @@
+<div class="blog"></div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+$.ajax({
+	url: '/',
+	type: 'GET',
+	success: function(data) {
+		console.log(data);
+		$.each(data, function(key, val) {
+			$('.blog').append('<h2>'+val.title+'</h2><p>'+val.content+'</p>'+'<p><strong>By:</strong> '+val.author+'</p><hr/>');
+		})
+	}
+
+});
+</script>
